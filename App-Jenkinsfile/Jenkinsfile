@@ -35,7 +35,7 @@ pipeline {
                   aws eks update-kubeconfig --name eks-cluster
                   """
                 }
-            }
+            
         
 
 
@@ -69,7 +69,7 @@ pipeline {
                 ]]) {
                 sh "aws elb describe-load-balancers | grep DNSName"
               
-          }
+          
        }
             }
        }
