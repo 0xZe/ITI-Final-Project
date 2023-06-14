@@ -1,0 +1,80 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+    stages {
+
+         stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+
+
+       stage('Build & push Dockerfile (CI)') {
+            steps {
+		     
+		   
+              sh """
+              cd App-Ansible
+              ansible-playbook playbook.yml
+              """
+
+       stage('Update-kubeconfig') {
+            steps {
+              
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  aws eks update-kubeconfig --name eks-cluster
+                  """
+                }
+            }
+        }
+
+
+       stage('Deploy the App (CD)') {
+            steps {
+             
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  kubectl create namespace App
+                  cd App/k8s
+                  kubectl -n App -f deployment.yaml
+                  kubectl -n App apply -f service.yaml
+                  """
+                 sleep(time: 90, unit: "SECONDS")
+                }
+
+
+       stage('Return APP URL') {
+          steps {
+            
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh "aws elb describe-load-balancers | grep DNSName"
+              }
+          }
+       }
+            }
+       }
+            }
+
+       }       
+    }
+}
