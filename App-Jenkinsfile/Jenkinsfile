@@ -52,9 +52,8 @@ pipeline {
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
                   sh """
-                  
                   cd App-K8s
-                  kubectl -n app -f deployment.yaml
+		  kubectl -n app apply -f deployment.yaml
                   kubectl -n app apply -f service.yaml
                   """
                  sleep(time: 90, unit: "SECONDS")
@@ -62,7 +61,7 @@ pipeline {
 	    }
                 
       }
-//kubectl create namespace app
+			//kubectl create namespace app
 
       stage('Return APP URL') {
           steps {
