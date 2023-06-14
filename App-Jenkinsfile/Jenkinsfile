@@ -36,7 +36,7 @@ pipeline {
                   """
                 }
             }
-        }
+        
 
 
       stage('Deploy the App (CD)') {
@@ -55,7 +55,7 @@ pipeline {
                   kubectl -n App apply -f service.yaml
                   """
                  sleep(time: 90, unit: "SECONDS")
-                }
+                
 
 
       stage('Return APP URL') {
@@ -68,7 +68,7 @@ pipeline {
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
                 sh "aws elb describe-load-balancers | grep DNSName"
-              }
+              
           }
        }
             }
