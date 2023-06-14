@@ -6,12 +6,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: ITI-page
+      app: iti-page
   replicas: 2
   template:
     metadata:
       labels:
-        app: ITI-page
+        app: iti-page
     spec:
       containers:
       - name: iti-page
