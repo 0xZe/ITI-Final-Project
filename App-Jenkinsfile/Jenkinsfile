@@ -21,6 +21,8 @@ pipeline {
               cd App-Ansible
               ansible-playbook playbook.yml
               """
+	    }
+      }
 
       stage('Update-kubeconfig') {
             steps {
@@ -35,7 +37,8 @@ pipeline {
                   aws eks update-kubeconfig --name eks-cluster
                   """
                 }
-            
+	    }
+      }
         
 
 
@@ -55,7 +58,10 @@ pipeline {
                   kubectl -n App apply -f service.yaml
                   """
                  sleep(time: 90, unit: "SECONDS")
+		}
+	    }
                 
+      }
 
 
       stage('Return APP URL') {
