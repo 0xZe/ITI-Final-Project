@@ -12,3 +12,18 @@ terraform init
 terraform apply
 ```
 ---
+continuing
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+![iti-final](https://github.com/0xZe/ITI-Final-Project/assets/81789671/3a9e3f13-005a-40c4-9b37-9f7a0e239ada)
