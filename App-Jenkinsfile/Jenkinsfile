@@ -6,14 +6,14 @@ pipeline {
 	}
     stages {
 
-         stage('Docker Login') {
+      stage('Docker Login') {
             steps {
               sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
 
 
-       stage('Build & push Dockerfile (CI)') {
+      stage('Build & push Dockerfile (CI)') {
             steps {
 		     
 		   
@@ -22,7 +22,7 @@ pipeline {
               ansible-playbook playbook.yml
               """
 
-       stage('Update-kubeconfig') {
+      stage('Update-kubeconfig') {
             steps {
               
                 withCredentials([[
@@ -39,7 +39,7 @@ pipeline {
         }
 
 
-       stage('Deploy the App (CD)') {
+      stage('Deploy the App (CD)') {
             steps {
              
                 withCredentials([[
@@ -58,7 +58,7 @@ pipeline {
                 }
 
 
-       stage('Return APP URL') {
+      stage('Return APP URL') {
           steps {
             
               withCredentials([[
