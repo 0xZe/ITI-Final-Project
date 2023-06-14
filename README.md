@@ -1,5 +1,5 @@
 ## Step 1:
-### Build AWS EC2 Instance
+### Build AWS EKS Cluster
 ```
 cd EKS-Terraform/
 
