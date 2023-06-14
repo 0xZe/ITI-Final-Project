@@ -53,7 +53,7 @@ pipeline {
                   ]]) {
                   sh """
                   
-                  cd App-k8s
+                  cd App-K8s
                   kubectl -n app -f deployment.yaml
                   kubectl -n app apply -f service.yaml
                   """
