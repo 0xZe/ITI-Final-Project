@@ -1,7 +1,7 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: ITI-img-deployment 
+  name: iti-img-deployment 
   namespace: app
 spec:
   selector:
