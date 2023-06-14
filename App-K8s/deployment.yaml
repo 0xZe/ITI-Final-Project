@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ITI-img-deployment 
-  namespace: App
+  namespace: app
 spec:
   selector:
     matchLabels:
