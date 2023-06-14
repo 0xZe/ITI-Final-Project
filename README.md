@@ -1,7 +1,10 @@
-## Step 1: Create EKS Cluster using Terraform
+## Step 1:
+### Build AWS EC2 Instance
+```
+cd EKS-Terraform/
 
-```
-cd EKS-Terraform
 terraform init
-terraform apply -auto-approve
+
+terraform apply
 ```
+---
