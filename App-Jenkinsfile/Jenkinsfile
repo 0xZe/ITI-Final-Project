@@ -54,8 +54,8 @@ pipeline {
                   sh """
                   kubectl create namespace App
                   cd App/k8s
-                  kubectl -n App -f deployment.yaml
-                  kubectl -n App apply -f service.yaml
+                  kubectl -n app -f deployment.yaml
+                  kubectl -n app apply -f service.yaml
                   """
                  sleep(time: 90, unit: "SECONDS")
 		}
