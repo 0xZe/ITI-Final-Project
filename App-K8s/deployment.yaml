@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: ITI-img-deployment 
+  namespace: App
+spec:
+  selector:
+    matchLabels:
+      app: ITI-page
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ITI-page
+    spec:
+      containers:
+      - name: ITI-page
+        image: 0xze/iti-page:latest
+        ports:
+        - containerPort: 80
