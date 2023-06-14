@@ -14,7 +14,7 @@ spec:
         app: ITI-page
     spec:
       containers:
-      - name: ITI-page
+      - name: iti-page
         image: 0xze/iti-page:latest
         ports:
         - containerPort: 80
