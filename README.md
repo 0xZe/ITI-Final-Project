@@ -57,9 +57,14 @@ $ kubectl apply -f deployment.yaml -n jenkins
 $ kubectl apply -f service.yaml -n jenkins
 ```
 
-```
+## Step 7: Access Jenkins
 
 ```
+# Replace <jenkins-service ip> with the ip of the jenkins-service
+<jenkins-service ip>
+```
+
+
 continuing
 .
 .
