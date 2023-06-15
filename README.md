@@ -16,9 +16,9 @@ Compenetes that will built are:
 -  `EKS`
 -  `private Worker Nodes`
 
-```
+
 ![1](https://github.com/0xZe/ITI-Final-Project/assets/81789671/c745deb4-c8ff-4f9a-b06d-cac810b414a8)
-```
+
 ---
 
 ## Step 2: Connect to the Bastion 
