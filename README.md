@@ -19,15 +19,13 @@ Compenetes that will built are:
 
 ## Step 2: Connect to the Bastion 
 `I will use the bastion to connect to the cluster from it to Install Docker on the cluster`
-`ssh to the created Bastion using the following command`
 
 ```
 $ ssh -i mykey.pem ubuntu@<Bastion-public-ip-address>
 ```
 
-## Step 3: Connecting to the cluster from the Bastion to install docker on it
-`We will need docker deamon socket on the pipeline`
-`ssh to the Node using the following command`
+## Step 3: Connect to the cluster from the Bastion to install docker on it
+`We will need docker daemon socket on the pipeline`
 
 ```
 $ ssh -i mykey.pem ec2-user@<Bastion-public-ip-address>
