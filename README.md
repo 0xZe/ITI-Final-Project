@@ -60,8 +60,8 @@ $ kubectl apply -f service.yaml -n jenkins
 ## Step 7: Access Jenkins
 
 ```
-# Replace <jenkins-service ip> with the ip of the jenkins-service
-<jenkins-service ip>
+# Replace <jenkins-service URL> with the URL of the jenkins-service
+<jenkins-service URL>
 ```
 ## Step 8: Configure Jenkins
 
@@ -84,6 +84,9 @@ From Definition choose "Pipeline Script from SCM" > Choose "Git" as SCM > Add re
 `make sure the branch name is right and the path where Jenkinsfile is located in the repository`
 
 Save > Build Now
+
+## Step 10: Access our App
+The pipeline will return the URL of our App at the end 
 
 
 
