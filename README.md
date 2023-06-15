@@ -86,7 +86,8 @@ From Definition choose "Pipeline Script from SCM" > Choose "Git" as SCM > Add re
 Save > Build Now
 
 ## Step 10: Access our App
-The pipeline will return the URL of our App at the end 
+
+`The pipeline will return the URL of our App at the end `
 
 
 
