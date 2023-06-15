@@ -67,8 +67,8 @@ $ kubectl apply -f service.yaml -n jenkins
 
 ### Add Credentials
 
-`Install aws cloud bees pligin`
-`then`
+`First Install CloudBees AWS Credentials Plugin`
+`then go to`
 `Manage Jenkins > Manage Credentials > global > Add Credentials`
 
 Add AWs Acess Key & Secret Access Key
@@ -90,23 +90,4 @@ Save > Build Now
 `The pipeline will return the URL of our App at the end `
 
 
-
-
-
-continuing
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-![iti-final](https://github.com/0xZe/ITI-Final-Project/assets/81789671/3a9e3f13-005a-40c4-9b37-9f7a0e239ada)
-```
 
