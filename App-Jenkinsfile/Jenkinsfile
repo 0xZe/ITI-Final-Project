@@ -53,7 +53,6 @@ pipeline {
                   ]]) {
                   sh """
                   cd App-K8s
-		  kubectl create namespace app
 		  kubectl -n app apply -f deployment.yaml
                   kubectl -n app apply -f service.yaml
                   """
