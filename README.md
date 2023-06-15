@@ -5,20 +5,32 @@ This project is to build EKS Cluster on AWS and use Jenkins on the cluster to ru
 ## Step 1:
 ### Build AWS EKS Cluster
 ```
-cd EKS-Terraform/
-
-terraform init
-
-terraform apply
+$ cd EKS-Terraform/
+$ terraform init
+$ terraform apply
 ```
 Compenetes that will be are:
 
 - `VPC`
 - `Public Subnet & Private Subnets`
-- (Kubernetes Cluster) `EKS`
+-  `EKS`
 -  `Worker Nodes`
 
 ---
+## Step 2:
+### Update Kubeconfig
+```
+$ aws eks --region us-east-1 update-kubeconfig --name eks-cluster
+```
+## Step 3:
+### Deploy Jenkins on EKS Cluster
+```
+$ cd Jenkins-K8s
+$ kubectl apply -f admin-clusterrole.yaml
+$ kubectl apply -f deployment.yaml -n jenkins
+$ kubectl apply -f service.yaml -n jenkins
+ 
+```
 continuing
 .
 .
