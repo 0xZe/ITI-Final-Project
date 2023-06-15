@@ -29,8 +29,8 @@ $ ssh -i mykey.pem ubuntu@<Bastion-public-ip-address>
 
 ```
 $ ssh -i mykey.pem ec2-user@<Bastion-public-ip-address>
-`Note that you will make the ssh key in bastion by copying it`
 ```
+`Note that you will make the ssh key in bastion by copying it`
 
 ## Step 4: Update Kubeconfig
 
