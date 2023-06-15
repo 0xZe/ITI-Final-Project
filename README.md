@@ -22,12 +22,7 @@ Compenetes that will built are:
 `ssh to the created Bastion using the following command`
 $ ssh -i mykey.pem ubuntu@<Bastion-public-ip-address>
 ```
-## Step 3: Connecting to the cluster from the bastion and install Docker
-`I will use Docker dameon socket on the Pipeline`
- 
-`ssh to the created Bastion using the following command`
-`Note that you will make the ssh key by copying it`
-ssh -i mykey.pem ubuntu@<Node-private-ip-address>
+
 ```
 ## Step 4: Update Kubeconfig
  
