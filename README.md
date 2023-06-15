@@ -63,6 +63,27 @@ $ kubectl apply -f service.yaml -n jenkins
 # Replace <jenkins-service ip> with the ip of the jenkins-service
 <jenkins-service ip>
 ```
+## Step 8: Configure Jenkins
+
+### Add Credentials
+
+`Install aws cloud bees pligin`
+`then`
+`Manage Jenkins > Manage Credentials > global > Add Credentials`
+
+Add AWs Acess Key & Secret Access Key
+
+Add Dockerhub Username & Password
+
+## Step 6: Create and Run Pipeline
+
+`Dashboard > New Item > Ppeline`
+
+From Definition choose "Pipeline Script from SCM" > Choose "Git" as SCM > Add repository URL > Choose Credentials from the dropdown menu
+
+`make sure the branch name is right and the path where Jenkinsfile is located in the repository`
+
+Save > Build Now
 
 
 continuing
