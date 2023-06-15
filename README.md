@@ -11,6 +11,13 @@ terraform init
 
 terraform apply
 ```
+Compenetes that will be are:
+
+- `VPC`
+- `Public Subnet & Private Subnets`
+- (Kubernetes Cluster) `EKS`
+-  `Worker Nodes`
+
 ---
 continuing
 .
