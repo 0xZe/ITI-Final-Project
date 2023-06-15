@@ -26,19 +26,29 @@ $ ssh -i mykey.pem ubuntu@<Bastion-public-ip-address>
 
 ## Step 3: Connect to the cluster from the Bastion to install docker on it
 `We will need docker daemon socket on the pipeline`
-
+`Note that you will make the ssh key in bastion by copying it`
 ```
 $ ssh -i mykey.pem ec2-user@<Bastion-public-ip-address>
 ```
-`Note that you will make the ssh key in bastion by copying it`
 
-## Step 4: Update Kubeconfig
+## Step 4: Install docker on the node
+
+```
+$ sudo yum update
+$ sudo yum install docker
+$ sudo systemctl enable docker.service
+$ sudo systemctl start docker.service
+$ sudo usermod -a -G docker ec2-user
+```
+
+
+## Step 5: Update Kubeconfig
 
 ```
 $ aws eks --region us-east-1 update-kubeconfig --name eks-cluster
 ```
 
-## Step 5: Deploy Jenkins on EKS Cluster to make the pipeline
+## Step 6: Deploy Jenkins on EKS Cluster to make the pipeline
 
 ```
 $ cd Jenkins-K8s
