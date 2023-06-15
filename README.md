@@ -26,20 +26,17 @@ Compenetes that will built are:
 
 ```
 $ ssh -i mykey.pem ubuntu@<Bastion-public-ip-address>
-
-![2](https://github.com/0xZe/ITI-Final-Project/assets/81789671/fb59a907-1148-471a-80ce-4c6022ba7034)
-
 ```
+![2](https://github.com/0xZe/ITI-Final-Project/assets/81789671/fb59a907-1148-471a-80ce-4c6022ba7034)
 
 ## Step 3: Connect to the cluster from the Bastion to install docker on it
 `We will need docker daemon socket on the pipeline`
 `Note that you will make the ssh key in bastion by copying it`
 ```
 $ ssh -i mykey.pem ec2-user@<Bastion-public-ip-address>
-
+```
 ![3](https://github.com/0xZe/ITI-Final-Project/assets/81789671/388a456d-304e-43ea-89ac-91de1cb99762)
 
-```
 
 ## Step 4: Install docker on the node
 
@@ -49,10 +46,8 @@ $ sudo yum install docker
 $ sudo systemctl enable docker.service
 $ sudo systemctl start docker.service
 $ sudo usermod -a -G docker ec2-user
-
-![4](https://github.com/0xZe/ITI-Final-Project/assets/81789671/55d738c5-b55a-4ea9-969b-e3ede39fc776)
-
 ```
+![4](https://github.com/0xZe/ITI-Final-Project/assets/81789671/55d738c5-b55a-4ea9-969b-e3ede39fc776)
 
 
 ## Step 5: Update Kubeconfig
@@ -76,11 +71,10 @@ $ kubectl apply -f service.yaml -n jenkins
 ```
 # Replace <jenkins-service URL> with the URL of the jenkins-service
 <jenkins-service URL>
-
+```
 ![5](https://github.com/0xZe/ITI-Final-Project/assets/81789671/889d89e6-5071-4019-8dad-44f27c9c1df8)
 ![6](https://github.com/0xZe/ITI-Final-Project/assets/81789671/1e887161-934e-4c65-a168-9757964207f2)
 
-```
 ## Step 8: Configure Jenkins
 
 ### Add Credentials
