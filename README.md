@@ -2,7 +2,7 @@
 
 This project is to build EKS Cluster on AWS and use Jenkins on the cluster to deploy application on the same cluster
 
-## Step 1: Build AWS EKS Cluster
+## Step 1: Build the infrastructure
 
 ```
 $ cd EKS-Terraform/
